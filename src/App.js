@@ -4,6 +4,7 @@ import Footer from './comps/Footer';
 import Home from './Home';
 import Login from './Login';
 import QuoteGet from './QuoteGet';
+import MyQuotations from './MyQuotations';
 function App() {
   return (
     <Router>
@@ -19,6 +20,9 @@ function App() {
             </Route>
             <Route path="/QuoteGet">
               <QuoteGet />
+            </Route>
+            <Route pathe="/MyQuotations">
+              <MyQuotations />
             </Route>
           </Switch>
         </div>
