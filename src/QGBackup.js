@@ -1,4 +1,16 @@
 import { useState } from "react";
+import { Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+import {
+  Table,
+  TableCell,
+  TableBody,
+  TableHead,
+  TableRow,
+} from "@mui/material";
+import Paper from "@mui/material/Paper";
 const QuoteGet = () => {
   const [Address, setAddress] = useState("");
   const [PurchasePrice, setPurchasePrice] = useState("");
@@ -66,6 +78,7 @@ const QuoteGet = () => {
               BDRF
               BTTOGF
               SMST
+              SDST
               SMIT
               SMRF
               SDRF
@@ -101,37 +114,40 @@ const QuoteGet = () => {
       });
   };
   return (
-    <div className="create">
-      <h2>Get A Quotation</h2>
+    <div>
       {isPending && (
-        <div>
+        <div className="getQuote">
           <form onSubmit={handleSubmit}>
-            <label>Address</label>
             <input
+              placeholder="Address"
               type="text"
               required
               value={Address}
               onChange={(e) => setAddress(e.target.value)}
             />
-            <label>Purchase Amount</label>
             <input
+              placeholder="Purchase Price"
               type="number"
               required
               value={PurchasePrice}
               onChange={(e) => setPurchasePrice(e.target.value)}
             />
-            <label>Loan Amount</label>
             <input
+              placeholder="Loan Amount"
               type="number"
               required
               value={LoanAmount}
               onChange={(e) => setLoanAmount(e.target.value)}
             />
-            <button>Add Blog</button>
+            <button>Submit</button>
           </form>
         </div>
       )}
-      {isFetched && <h1>{data.address}</h1>}
+      {isFetched && (
+        <div>
+          
+        </div>
+      )}
     </div>
   );
 };
