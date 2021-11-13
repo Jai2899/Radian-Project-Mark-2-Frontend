@@ -88,13 +88,13 @@ footer a .l1 {
 
 footer .foot-ele-right a {
   padding-right: 20px;
-  width: 180 px;
+  width: 180px;
   text-align: center;
-  padding: 10 px 16 px;
+  padding: 10px 16px;
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
-  border-radius: 28 px;
+  border-radius: 28px;
   outline: none;
 }
 
@@ -104,7 +104,7 @@ footer .foot-ele-left a {
   font-size: 19px;
   line-height: 28px;
   font-weight: 700;
-  margin-right: 35 px;
+  margin-right: 35px;
 }
 
 footer .footer-data {
@@ -150,13 +150,13 @@ footer .foot-ele-left span {
 }
 
 .btn-footer {
-  width: 180 px;
+  width: 180px;
   text-align: center;
-  padding: 10 px 16 px;
+  padding: 10px 16px;
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
-  border-radius: 28 px;
+  border-radius: 28px;
   outline: none;
 }
 
@@ -466,3 +466,7 @@ body {
   font-size: 0.625rem;
   font-weight: 500;
 }
+
+.showDetails {
+  background: antiquewhite;
+  }

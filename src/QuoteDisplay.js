@@ -10,7 +10,9 @@ import {
   TableRow,
 } from "@mui/material";
 import Paper from "@mui/material/Paper";
-const QuoteGet = (props) => {
+const QuoteDisplay = (props) => {
+  console.log("hi")
+  console.log(props);
     const data=props.data;
   return (
     <div>
@@ -706,4 +708,4 @@ const QuoteGet = (props) => {
   );
 };
 
-export default QuoteGet;
+export default QuoteDisplay;

@@ -5,6 +5,8 @@ import Home from './Home';
 import Login from './Login';
 import QuoteGet from './QuoteGet';
 import MyQuotations from './MyQuotations';
+import QuoteDisplay from './QuoteDisplay';
+
 function App() {
   return (
     <Router>
@@ -23,6 +25,9 @@ function App() {
             </Route>
             <Route pathe="/MyQuotations">
               <MyQuotations />
+            </Route>
+            <Route pathe="/QuoteDisplay">
+              <QuoteDisplay />
             </Route>
           </Switch>
         </div>
