@@ -11,7 +11,6 @@ import {
 } from "@mui/material";
 import Paper from "@mui/material/Paper";
 const QuoteDisplay = (props) => {
-  console.log("hi")
   console.log(props);
     const data=props.data;
   return (
