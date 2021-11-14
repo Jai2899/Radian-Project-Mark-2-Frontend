@@ -1,6 +1,10 @@
-import { useState } from "react";
+
+import { useState,useContext } from "react";
 import QuoteDisplay from './QuoteDisplay';
+import AuthContext from "./context/auth-context";
+
 const QuoteGet = () => {
+  const context = useContext(AuthContext);
   const [Address, setAddress] = useState("");
   const [PurchasePrice, setPurchasePrice] = useState("");
   const [LoanAmount, setLoanAmount] = useState("");
@@ -82,11 +86,13 @@ const QuoteGet = () => {
           }
         `,
     };
-    fetch("/graphql", {
+    const token =context.token;
+    fetch("http://localhost:8000/graphql", {
       method: "POST",
       body: JSON.stringify(requestBody),
       headers: {
         "Content-Type": "application/json",
+        "Authorization":"Bearer "+token
       },
     })
       .then((res) => {
