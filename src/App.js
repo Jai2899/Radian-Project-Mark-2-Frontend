@@ -11,7 +11,7 @@ function App() {
     token: null,
     userId: null
   });
-  let login = (token, userId, tokenExpiration) => {
+   const login = (token, userId, tokenExpiration) => {
     setState({ token: token, userId: userId })
 
   }
@@ -19,9 +19,9 @@ function App() {
     setState({ token: null, userId: null })
   };
   return (
-    <Router>
+    <Router> 
       <React.Fragment>
-        <AuthContext.Provider value={{ token: state.token, userId: state.userId, login: login, logout: logout }}>
+        <AuthContext.Provider value={{ token: state.token, userId: state.userId, login:login, logout: logout }}>
           <div className="App">
 
             <Navbar />
