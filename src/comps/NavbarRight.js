@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import AuthContext from "../context/auth-context";
 import { useContext } from "react";
-
 const NavbarRight = () => {
   const context = useContext(AuthContext);
 
@@ -18,7 +17,7 @@ const NavbarRight = () => {
             <>
               {context.token && (<Link to="/MyQuotations">My Quotations</Link>)}
               {context.token && (
-                <button onClick={context.logout}>Logout</button>
+                <button className="myButton" onClick={context.logout}>Logout</button>
               )}
             </>
           </div>

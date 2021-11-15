@@ -1,8 +1,8 @@
-import { useState, useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
-import AuthContext from "./context/auth-context";
-const MyQuotations = () => {
-  const context = useContext(AuthContext);
+import { useParams} from "react-router-dom";
+import { useState, useEffect } from "react";
+import QuoteDisplay from "./QuoteDisplay";
+const Middleware = () => {
+  const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState(null);
   const [isError, setError] = useState(null);
@@ -72,10 +72,6 @@ const MyQuotations = () => {
           TMRF
           TDRF
           TTTOGF
-          creator {
-            _id
-            email
-          }
         }
       }
     `,
@@ -95,15 +91,17 @@ const MyQuotations = () => {
         return res.json();
       })
       .then((resData) => {
-        console.log(resData["data"]["events"]);
-        let k= resData["data"]["events"];
-        for (let i=0;i<k.length;i++)
+        //console.log(resData["data"]["events"]);
+        for (let i=0;i<Object.keys(resData["data"]["events"]).length;i++)
         {
-            if(k[i]["creator"]["_id"]!==context.userId)
-              delete k[i];
+            if(resData["data"]["events"][i]["_id"]===id)
+            {
+                setData(resData["data"]["events"][i]);
+                break;
+            }
+            else
+                console.log("Something Went Terribly wrong");
         }
-        //console.log(k);
-        setData(k);
       })
       .catch((err) => {
         console.log(err);
@@ -115,21 +113,8 @@ const MyQuotations = () => {
   }, []);
   if (isLoading) return "Loading......";
   if (isError) return "Error.....";
-  return (
-    <div>
-      {isLoading && <h1>Quotations page is Loading</h1>}
-      <div className="blog-list">
-        {data.map((d) => (
-          <div className="blog-preview" key={d._id}>
-            <Link to={`/middleware/${d._id}`}>
-              <h2>{d.address}</h2>
-              <p>{d.QuoteDate}</p>
-            </Link>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+  //console.log(id);
+  return <div> {!isLoading && (<QuoteDisplay data={data}/>)}</div>;
 };
 
-export default MyQuotations;
+export default Middleware;

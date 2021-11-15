@@ -5,6 +5,8 @@ import Footer from './comps/Footer';
 import Home from './Home';
 import Login from './Login';
 import QuoteGet from './QuoteGet';
+import MyQuotations from './MyQuotations';
+import Middleware from './middleware';
 import AuthContext from "./context/auth-context";
 function App() {
   const [state, setState] = useState({
@@ -37,6 +39,12 @@ function App() {
                 </Route>)}
                 <Route path="/QuoteGet">
                   <QuoteGet />
+                </Route>
+                <Route path="/MyQuotations">
+                  <MyQuotations />
+                </Route>
+                <Route path="/middleware/:id">
+                  <Middleware />
                 </Route>
                 {!state.token && <Redirect to="/Login" exact />}
               </Switch>

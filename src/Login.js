@@ -50,19 +50,16 @@ const Login = () => {
         return res.json();
       })
       .then((resData) => {
-        // if (resData.data.login.token) {
-
-        //   context.login(
-        //     resData.data.login.token,
-        //     resData.data.login.userId,
-        //     resData.data.login.tokenExpiration
-        //   );
-        console.log(resData);
-        console.log(resData["data"]["login"]["token"]);
-        if(resData["data"]["login"]["token"])
-        {
-          context.login(resData["data"]["login"]["token"],resData["data"]["login"]["userId"],resData["data"]["login"]["tokenExpiration"]);
+        // console.log(resData);
+        // console.log(resData["data"]["login"]["userId"]);
+        if (resData["data"]["login"]["token"]) {
+          context.login(
+            resData["data"]["login"]["token"],
+            resData["data"]["login"]["userId"],
+            resData["data"]["login"]["tokenExpiration"]
+          );
         }
+        //sessionStorage.setItem(userID, resData["data"]["login"]["userId"]);
       })
       .catch((err) => {
         console.log(err);
@@ -73,27 +70,34 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="home">
-        <label>Email</label>
-        <input
-          type="email"
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-        />
-      </div>
-      <div className="home">
-        <label>Password</label>
-        <input type="password" onChange={(e) => setPassword(e.target.value)} />
-      </div>
-      <div>
-        <button type="submit">Submit</button>
-        <button type="button" onClick={switchmodehandler}>
-          Switch to {isLogin ? "Signup" : "Login"}
-        </button>
-      </div>
-    </form>
+      <form className="auth-form" onSubmit={handleSubmit}>
+        <div className="form-control">
+          <label>Email Address</label>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+        </div>
+        <div className="form-control">
+          <label>Password</label>
+          <input
+            type="password"
+            placeholder="Password"
+            value={email}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <div className="form-actions">
+          <button type="submit">Submit</button>
+          <button type="button" onClick={switchmodehandler}>
+            Switch to {isLogin ? "Signup" : "Login"}
+          </button>
+        </div>
+      </form>
   );
 };
 
