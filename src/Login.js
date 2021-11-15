@@ -50,8 +50,6 @@ const Login = () => {
         return res.json();
       })
       .then((resData) => {
-        // console.log(resData);
-        // console.log(resData["data"]["login"]["userId"]);
         if (resData["data"]["login"]["token"]) {
           context.login(
             resData["data"]["login"]["token"],
@@ -59,7 +57,6 @@ const Login = () => {
             resData["data"]["login"]["tokenExpiration"]
           );
         }
-        //sessionStorage.setItem(userID, resData["data"]["login"]["userId"]);
       })
       .catch((err) => {
         console.log(err);
@@ -87,7 +84,7 @@ const Login = () => {
           <input
             type="password"
             placeholder="Password"
-            value={email}
+            value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>

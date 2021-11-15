@@ -6,6 +6,7 @@ const MyQuotations = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState(null);
   const [isError, setError] = useState(null);
+  const [haveData, setHaveData] = useState(true);
   const requestBody = {
     query: `
       query {
@@ -104,6 +105,8 @@ const MyQuotations = () => {
         }
         //console.log(k);
         setData(k);
+        if(k.length==0)
+          setHaveData(false);
       })
       .catch((err) => {
         console.log(err);
@@ -118,6 +121,7 @@ const MyQuotations = () => {
   return (
     <div>
       {isLoading && <h1>Quotations page is Loading</h1>}
+      {!haveData && <h1>No Previous quotations Available</h1>}
       <div className="blog-list">
         {data.map((d) => (
           <div className="blog-preview" key={d._id}>

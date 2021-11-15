@@ -522,15 +522,16 @@ body {
   
 
 }
-
-.myButton {
-	background-color:#002b49;
-	border-radius:10px;
+.myButton{
+  border-radius:10px;
 	display:inline-block;
 	cursor:pointer;
+	padding:1.5px 15px;
+}
+.myButton Link{
+	background-color:#002b49;
 	color:#ffffff;
 	font-size:18px;
 	font-weight:bold;
-	padding:1.5px 15px;
 }
 
