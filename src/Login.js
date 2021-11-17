@@ -8,7 +8,7 @@ const Login = () => {
   const context = useContext(AuthContext);
   const [isError,setIsError]=useState(false);
   const [isSignUpPassed,setIsSignUpPassed]=useState(false);
-  const [isNoAccount,setIsNoAccount]=useState(true);
+  const [isAccountCreationFailed,setIsAccountCreationFailed]=useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email.trim().length === 0 || password.trim().length === 0) {
@@ -47,6 +47,7 @@ const Login = () => {
       },
     })
       .then((res) => {
+        
         if (res.status !== 200 && res.status !== 200) {
           setIsError(true);
           throw new Error("Failed");
@@ -56,7 +57,12 @@ const Login = () => {
       .then((resData) => {
         if(!isLogin)
         {
-          if(resData["data"]["createUser"]["_id"]){
+          console.log(resData);
+          if(resData["errors"])
+          {
+            setIsAccountCreationFailed(true);
+          }
+          else if(resData["data"]["createUser"]["_id"]){
             setIsSignUpPassed(true);
           }
         }
@@ -72,11 +78,14 @@ const Login = () => {
       })
       .catch((err) => {
         console.log(err);
+        //setIsAccountCreationFailed(true);
       });
   };
   const switchmodehandler = (e) => {
     setisLogin(!isLogin);
-    setIsNoAccount(false);
+    setIsError(false);
+    setIsAccountCreationFailed(false);
+    setIsSignUpPassed(false);
   };
 
   return (
@@ -108,8 +117,9 @@ const Login = () => {
             Switch to {isLogin ? "Signup" : "Login"}
           </button>
         </div>
-        {isNoAccount && (<div className="WC"><h3>Dont Have an Account? Then switch to SignUp.</h3></div>)}
-        {isError&&(<div className="WC"><h6>Wrong Credentials. Please Try Again!!!</h6></div>)}
+        {isLogin && (<div className="WC"><h3>Dont Have an Account? Then switch to SignUp.</h3></div>)}
+        {isAccountCreationFailed && (<div className="WC"><h3>This user is already registered. Try with a different ID</h3></div>)}
+        {isError&&(<div className="WC"><h3>Wrong Credentials. Please Try Again!!!</h3></div>)}
         {isSignUpPassed && (<div className="WC"><h3>Sign Up Successful. Please Login Now...</h3></div>)}
       </form>
       </div>
