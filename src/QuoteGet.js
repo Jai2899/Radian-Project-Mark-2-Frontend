@@ -16,7 +16,7 @@ const QuoteGet = () => {
     const details = { Address, PurchasePrice, LoanAmount };
     const pp = parseInt(PurchasePrice);
     const la = parseInt(LoanAmount);
-    console.log(details);
+    //console.log(details);
     const requestBody = {
       query: `
           mutation {
@@ -99,7 +99,7 @@ const QuoteGet = () => {
         return res.json();
       })
       .then((resData) => {
-        console.log(resData);
+        //console.log(resData);
         setData(resData["data"]["createEvent"]);
         setIsPending(false);
         setIsFetched(true);

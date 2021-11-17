@@ -45,16 +45,20 @@ const MyQuotations = () => {
       .then((resData) => {
         // providing the quotes created by the user
         let quotes = resData["data"]["events"];
+        let temp=0;
         for (let i = 0; i < quotes.length; i++)
         {
           // Deleting the quotes not created by the user
           if(quotes[i]["creator"]["_id"] !== context.userId)
+          {
               delete quotes[i];
+              temp=temp+1;
+          }
         }
         // Updating data with the quotes created by the user
         setData(quotes);
         // Updating haveData variable
-        if(quotes.length === 0)
+        if(quotes.length === temp)
           setHaveData(false);
       })
       .catch((err) => {
@@ -71,14 +75,14 @@ const MyQuotations = () => {
   if (isError !== null) return "Error.....";
   return (
     <div>
-      {isLoading && <h1>Quotations page is Loading</h1>}
-      {!haveData && <h1>No Previous quotations Available</h1>}
+      {isLoading && <div className="WC"><h1>Quotations page is Loading</h1></div>}
+      {!haveData && <div className="WC"><h1>No Previous quotations Available</h1></div>}
       <div className="blog-list">
         {data.map((d) => (
           <div className="blog-preview" key={d._id}>
             <Link to={`/middleware/${d._id}`}>
               <Grid style={{ flexBasis: "100%", padding: "8px"}}>
-                <Box style={{ lineHeight: "unset", color: "lightcoral", backgroundColor: "#5aa950"}} className="bold">{d.address}</Box>
+                <Box style={{ lineHeight: "unset", color: "#ffffff", backgroundColor: "#002b49"}} className="bold">{d.address}</Box>
                 <Box style={{ lineHeight: "unset" }}>Date: {d.QuoteDate}</Box>
                 <Box style={{ lineHeight: "unset" }}>Purchase Amount: {d.purchaseAmount}</Box>
                 <Box style={{ lineHeight: "unset" }}>Loan Amount: {d.loanAmount}</Box>
