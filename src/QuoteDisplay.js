@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import Paper from "@mui/material/Paper";
 const QuoteGet = (props) => {
-    const data=props.data;
+  const data = props.data;
   return (
     <div>
       <Grid>
@@ -41,9 +41,9 @@ const QuoteGet = (props) => {
                 <>
                   <Box className="jss99">
                     <Box className="jss102">
-                      <Typography className="jss66">Radian Quote</Typography>
+                      <Typography component={'div'} className="jss66">Radian Quote</Typography>
                       <Box>
-                        <Typography>
+                        <Typography component={'div'}>
                           <Box className="jss104">{data.radianQuote}</Box>
                         </Typography>
                       </Box>
@@ -59,14 +59,14 @@ const QuoteGet = (props) => {
                       className="jss395"
                       style={{ width: "calc(100% - 200px)" }}
                     >
-                      <Typography className="jss79">
+                      <Typography component={'div'} className="jss79">
                         Original Title Quote:
                       </Typography>
                     </Box>
                   </Box>
                   <Box className="jss393">
                     <Box className="jss394">
-                      <Typography className="jss79">
+                      <Typography component={'div'} className="jss79">
                         {data.rebateSavings}
                       </Typography>
                     </Box>
@@ -74,7 +74,7 @@ const QuoteGet = (props) => {
                       className="jss395"
                       style={{ width: "calc(100% - 200px)" }}
                     >
-                      <Typography className="jss79">
+                      <Typography component={'div'} className="jss79">
                         Radian Instant Rebate Savings:
                       </Typography>
                     </Box>
@@ -83,11 +83,11 @@ const QuoteGet = (props) => {
                 <>
                   <Box className="jss105">
                     <Box className="jss106">
-                      <Typography className="jss66">
+                      <Typography component={'div'} className="jss66">
                         Buyer Responsibility
                       </Typography>
                       <Box className="jss108">
-                        <Typography className="style">
+                        <Typography component={'div'} className="style">
                           <Box className="jss109">
                             {data.BuyerResponsibility}
                           </Box>
@@ -95,11 +95,11 @@ const QuoteGet = (props) => {
                       </Box>
                     </Box>
                     <Box className="jss106">
-                      <Typography className="jss66">
+                      <Typography component={'div'} className="jss66">
                         Seller Responsibility
                       </Typography>
                       <Box className="jss108">
-                        <Typography className="style">
+                        <Typography component={'div'} className="style">
                           <Box className="jss109">
                             {data.sellerResponsibility}
                           </Box>
@@ -132,7 +132,7 @@ const QuoteGet = (props) => {
                   <>
                     <Box className="jss393">
                       <Box className="jss394">
-                        <Typography className="jss79">
+                        <Typography component={'div'} className="jss79">
                           {data.purchaseAmount}
                         </Typography>
                       </Box>
@@ -140,14 +140,14 @@ const QuoteGet = (props) => {
                         className="jss395"
                         style={{ width: "calc(100% - 112px)" }}
                       >
-                        <Typography className="jss79">
+                        <Typography component={'div'} className="jss79">
                           Purchase Price
                         </Typography>
                       </Box>
                     </Box>
                     <Box className="jss393">
                       <Box className="jss394">
-                        <Typography className="jss79">
+                        <Typography component={'div'} className="jss79">
                           {data.loanAmount}
                         </Typography>
                       </Box>
@@ -155,12 +155,12 @@ const QuoteGet = (props) => {
                         className="jss395"
                         style={{ width: "calc(100% - 112px)" }}
                       >
-                        <Typography className="jss79">Loan Amount</Typography>
+                        <Typography component={'div'} className="jss79">Loan Amount</Typography>
                       </Box>
                     </Box>
                     <Box className="jss393">
                       <Box className="jss394">
-                        <Typography className="jss79">
+                        <Typography component={'div'} className="jss79">
                           {data.QuoteDate}
                         </Typography>
                       </Box>
@@ -168,7 +168,7 @@ const QuoteGet = (props) => {
                         className="jss395"
                         style={{ width: "calc(100% - 112px)" }}
                       >
-                        <Typography className="jss79">Quote Date</Typography>
+                        <Typography component={'div'} className="jss79">Quote Date</Typography>
                       </Box>
                     </Box>
                     <Box className="jss393">
@@ -179,7 +179,7 @@ const QuoteGet = (props) => {
                         className="jss395"
                         style={{ width: "calc(100% - 112px)" }}
                       >
-                        <Typography className="jss79">Transaction</Typography>
+                        <Typography component={'div'} className="jss79">Transaction</Typography>
                       </Box>
                     </Box>
                   </>
@@ -231,84 +231,99 @@ const QuoteGet = (props) => {
                   </TableCell>
                 </TableRow>
               </TableHead>
+         
+              <TableBody>
 
-              <TableBody>
-                <h4>
-                  Owner's Title
-                  Insurance&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </h4>
+              <TableRow >
+            
+                  
+               <h4>Owner's Title Insurance&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4>
 
-                <TableCell>{data.BOTI}</TableCell>
-                <TableCell>{data.SOTI}</TableCell>
-                <TableCell
-                  style={{ fontWeight: "bold", color: "rgb(0 166 160)" }}
-                >
-                  {data.TOTI}
-                </TableCell>
+                
+                  <TableCell>{data.BOTI}</TableCell>
+                  <TableCell>{data.SOTI}</TableCell>
+                  <TableCell
+                    style={{ fontWeight: "bold", color: "rgb(0 166 160)" }}
+                  >
+                    {data.TOTI}
+                  </TableCell>
+                </TableRow>
               </TableBody>
               <TableBody>
-                <h4>Lender's Title Insurance</h4>
-                <TableCell>{data.BLTI}</TableCell>
-                <TableCell>{data.SLTI}</TableCell>
-                <TableCell
-                  style={{ fontWeight: "bold", color: "rgb(0 166 160)" }}
-                >
-                  {data.TLTI}
-                </TableCell>
+                
+                  
+                  <TableRow>
+                  <h4>Lender's Title Insurance</h4>
+                  <TableCell>{data.BLTI}</TableCell>
+                  <TableCell>{data.SLTI}</TableCell>
+                  <TableCell
+                    style={{ fontWeight: "bold", color: "rgb(0 166 160)" }}
+                  >
+                    {data.TLTI}
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+              
+              <TableBody>
+               
+                  
+                  <TableRow>
+                  <h4 >Butlers Rebate (20%)</h4>
+                  <TableCell>{data.BBR}</TableCell>
+                  <TableCell>{data.SBR}</TableCell>
+                  <TableCell
+                    style={{ fontWeight: "bold", color: "rgb(0 166 160)" }}
+                  >
+                    {data.TBR}
+                  </TableCell>
+                </TableRow>
               </TableBody>
               <TableBody>
-                <h4>Butlers Rebate (20%)</h4>
-                <TableCell>{data.BBR}</TableCell>
-                <TableCell>{data.SBR}</TableCell>
-                <TableCell
-                  style={{ fontWeight: "bold", color: "rgb(0 166 160)" }}
-                >
-                  {data.TBR}
-                </TableCell>
+                <TableRow>
+                  <TableCell
+                    variant="footer"
+                    style={{
+                      color: "rgb(0, 43, 73)",
+                      fontWeight: "800",
+                      borderBottom: "none",
+                      fontSize: "20px",
+                    }}
+                  >
+                    Total Premium
+                  </TableCell>
+                  <TableCell
+                    style={{
+                      color: "rgb(0, 43, 73)",
+                      fontWeight: "800",
+                      borderBottom: "none",
+                      fontSize: "20px",
+                    }}
+                  >
+                    {data.BTPremium}
+                  </TableCell>
+                  <TableCell
+                    style={{
+                      color: "rgb(0, 43, 73)",
+                      fontWeight: "800",
+                      borderBottom: "none",
+                      fontSize: "20px",
+                    }}
+                  >
+                    {data.STPremium}
+                  </TableCell>
+                  <TableCell
+                    style={{
+                      borderBottom: "none",
+                      fontWeight: "bold",
+                      color: "rgb(0 166 160)",
+                      fontSize: "20px",
+                    }}
+                  >
+                    {data.TTPremium}
+                  </TableCell>
+                </TableRow>
               </TableBody>
-              <TableBody>
-                <TableCell
-                  variant="footer"
-                  style={{
-                    color: "rgb(0, 43, 73)",
-                    fontWeight: "800",
-                    borderBottom: "none",
-                    fontSize: "20px",
-                  }}
-                >
-                  Total Premium
-                </TableCell>
-                <TableCell
-                  style={{
-                    color: "rgb(0, 43, 73)",
-                    fontWeight: "800",
-                    borderBottom: "none",
-                    fontSize: "20px",
-                  }}
-                >
-                  {data.BTPremium}
-                </TableCell>
-                <TableCell
-                  style={{
-                    color: "rgb(0, 43, 73)",
-                    fontWeight: "800",
-                    borderBottom: "none",
-                    fontSize: "20px",
-                  }}
-                >
-                  {data.STPremium}
-                </TableCell>
-                <TableCell
-                  style={{
-                    borderBottom: "none",
-                    fontWeight: "bold",
-                    color: "rgb(0 166 160)",
-                    fontSize: "20px",
-                  }}
-                >
-                  {data.TTPremium}
-                </TableCell>
-              </TableBody>
+             
             </Table>
 
             <br />
@@ -342,71 +357,83 @@ const QuoteGet = (props) => {
                 </TableRow>
               </TableHead>
 
+<TableBody>
+<TableRow>
+              
+                  <h4 component="TableCell">
+                    ALTA ENDORSEMENT 9-06 (Restrictions, Encroachments, Minerals)
+                  </h4>
+                  <TableCell>{data.BAE906}</TableCell>
+                  <TableCell>{data.SAE906}</TableCell>
+                  <TableCell
+                    style={{ fontWeight: "bold", color: "rgb(0 166 160)" }}
+                  >
+                    {data.TAE906}
+                  </TableCell>
+                  </TableRow>
+                  </TableBody>
+               
+              
               <TableBody>
-                <h4>
-                  ALTA ENDORSEMENT 9-06 (Restrictions, Encroachments, Minerals)
-                </h4>
-                <TableCell>{data.BAE906}</TableCell>
-                <TableCell>{data.SAE906}</TableCell>
-                <TableCell
-                  style={{ fontWeight: "bold", color: "rgb(0 166 160)" }}
-                >
-                  {data.TAE906}
-                </TableCell>
+                
+                  
+                  <TableRow>
+                  <h4 >ALTA ENDORSEMENT 8.1-06 (Environmental Protection Lien)</h4>
+                  <TableCell>{data.BAE8106}</TableCell>
+                  <TableCell>{data.SAE8106}</TableCell>
+                  <TableCell
+                    style={{ fontWeight: "bold", color: "rgb(0 166 160)" }}
+                  >
+                    {data.TAE8106}
+                  </TableCell>
+                </TableRow>
               </TableBody>
               <TableBody>
-                <h4>ALTA ENDORSEMENT 8.1-06 (Environmental Protection Lien)</h4>
-                <TableCell>{data.BAE8106}</TableCell>
-                <TableCell>{data.SAE8106}</TableCell>
-                <TableCell
-                  style={{ fontWeight: "bold", color: "rgb(0 166 160)" }}
-                >
-                  {data.TAE8106}
-                </TableCell>
+                <TableRow>
+                  <TableCell
+                    variant="footer"
+                    style={{
+                      color: "rgb(0, 43, 73)",
+                      fontWeight: "800",
+                      borderBottom: "none",
+                      fontSize: "20px",
+                    }}
+                  >
+                    Total Endorsements
+                  </TableCell>
+                  <TableCell
+                    style={{
+                      color: "rgb(0, 43, 73)",
+                      fontWeight: "800",
+                      borderBottom: "none",
+                      fontSize: "20px",
+                    }}
+                  >
+                    {data.BTEndorsements}
+                  </TableCell>
+                  <TableCell
+                    style={{
+                      color: "rgb(0, 43, 73)",
+                      fontWeight: "800",
+                      borderBottom: "none",
+                      fontSize: "20px",
+                    }}
+                  >
+                    {data.STEndorsements}
+                  </TableCell>
+                  <TableCell
+                    style={{
+                      borderBottom: "none",
+                      fontWeight: "bold",
+                      color: "rgb(0 166 160)",
+                      fontSize: "20px",
+                    }}
+                  >
+                    {data.TTEndorsements}
+                  </TableCell>
+                </TableRow>
               </TableBody>
-              <TableBody>
-                <TableCell
-                  variant="footer"
-                  style={{
-                    color: "rgb(0, 43, 73)",
-                    fontWeight: "800",
-                    borderBottom: "none",
-                    fontSize: "20px",
-                  }}
-                >
-                  Total Endorsements
-                </TableCell>
-                <TableCell
-                  style={{
-                    color: "rgb(0, 43, 73)",
-                    fontWeight: "800",
-                    borderBottom: "none",
-                    fontSize: "20px",
-                  }}
-                >
-                  {data.BTEndorsements}
-                </TableCell>
-                <TableCell
-                  style={{
-                    color: "rgb(0, 43, 73)",
-                    fontWeight: "800",
-                    borderBottom: "none",
-                    fontSize: "20px",
-                  }}
-                >
-                  {data.STEndorsements}
-                </TableCell>
-                <TableCell
-                  style={{
-                    borderBottom: "none",
-                    fontWeight: "bold",
-                    color: "rgb(0 166 160)",
-                    fontSize: "20px",
-                  }}
-                >
-                  {data.TTEndorsements}
-                </TableCell>
-              </TableBody>
+              
             </Table>
             <br />
             <Table style={{ width: "100%" }} aria-label="a dense table">
@@ -438,112 +465,125 @@ const QuoteGet = (props) => {
                   </TableCell>
                 </TableRow>
               </TableHead>
-
+<>
               <TableBody>
-                <h4>
-                  Closing
-                  Fee&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </h4>
-                <TableCell>{data.BCF}</TableCell>
-                <TableCell>{data.SCF}</TableCell>
-                <TableCell
-                  style={{ fontWeight: "bold", color: "rgb(0 166 160)" }}
-                >
-                  {data.TCF}
-                </TableCell>
+                
+                 
+                  <TableRow>
+                  <h4 >
+                    Closing
+                    Fee&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  </h4>
+                  <TableCell>{data.BCF}</TableCell>
+                  <TableCell>{data.SCF}</TableCell>
+                  <TableCell
+                    style={{ fontWeight: "bold", color: "rgb(0 166 160)" }}
+                  >
+                    {data.TCF}
+                  </TableCell>
+                </TableRow>
               </TableBody>
               <TableBody>
-                <h4>Search Fee</h4>
-                <TableCell>{data.BSF}</TableCell>
-                <TableCell>{data.SSF}</TableCell>
-                <TableCell
-                  style={{ fontWeight: "bold", color: "rgb(0 166 160)" }}
-                >
-                  {data.TSF}
-                </TableCell>
+               
+                  
+                  <TableRow>
+                  <h4 >Search Fee</h4>
+                  <TableCell>{data.BSF}</TableCell>
+                  <TableCell>{data.SSF}</TableCell>
+                  <TableCell
+                    style={{ fontWeight: "bold", color: "rgb(0 166 160)" }}
+                  >
+                    {data.TSF}
+                  </TableCell>
+                </TableRow>
               </TableBody>
               <TableBody>
-                <TableCell
-                  variant="footer"
-                  style={{
-                    color: "rgb(0, 43, 73)",
-                    fontWeight: "800",
-                    fontSize: "20px",
-                  }}
-                >
-                  Total Settlement Charges
-                </TableCell>
-                <TableCell
-                  style={{
-                    color: "rgb(0, 43, 73)",
-                    fontWeight: "800",
-                    fontSize: "20px",
-                  }}
-                >
-                  {data.BTSettlementCharges}
-                </TableCell>
-                <TableCell
-                  style={{
-                    color: "rgb(0, 43, 73)",
-                    fontWeight: "800",
-                    fontSize: "20px",
-                  }}
-                >
-                  {data.STSettlementCharges}
-                </TableCell>
-                <TableCell
-                  style={{
-                    fontWeight: "bold",
-                    color: "rgb(0 166 160)",
-                    fontSize: "20px",
-                  }}
-                >
-                  {data.TTSettlementCharges}
-                </TableCell>
+                <TableRow>
+                  <TableCell
+                    variant="footer"
+                    style={{
+                      color: "rgb(0, 43, 73)",
+                      fontWeight: "800",
+                      fontSize: "20px",
+                    }}
+                  >
+                    Total Settlement Charges
+                  </TableCell>
+                  <TableCell
+                    style={{
+                      color: "rgb(0, 43, 73)",
+                      fontWeight: "800",
+                      fontSize: "20px",
+                    }}
+                  >
+                    {data.BTSettlementCharges}
+                  </TableCell>
+                  <TableCell
+                    style={{
+                      color: "rgb(0, 43, 73)",
+                      fontWeight: "800",
+                      fontSize: "20px",
+                    }}
+                  >
+                    {data.STSettlementCharges}
+                  </TableCell>
+                  <TableCell
+                    style={{
+                      fontWeight: "bold",
+                      color: "rgb(0 166 160)",
+                      fontSize: "20px",
+                    }}
+                  >
+                    {data.TTSettlementCharges}
+                  </TableCell>
+                </TableRow>
               </TableBody>
               <TableBody>
-                <TableCell
-                  variant="footer"
-                  style={{
-                    fontWeight: "bold",
-                    fontSize: "25px",
-                    color: "rgb(0 166 160)",
-                    borderBottom: "none",
-                  }}
-                >
-                  Total Title Charges
-                </TableCell>
-                <TableCell
-                  style={{
-                    fontWeight: "bold",
-                    fontSize: "25px",
-                    color: "rgb(0 166 160)",
-                    borderBottom: "none",
-                  }}
-                >
-                  {data.BTitleCharges}
-                </TableCell>
-                <TableCell
-                  style={{
-                    fontWeight: "bold",
-                    fontSize: "25px",
-                    color: "rgb(0 166 160)",
-                    borderBottom: "none",
-                  }}
-                >
-                  {data.STitleCharges}
-                </TableCell>
-                <TableCell
-                  style={{
-                    borderBottom: "none",
-                    fontWeight: "bold",
-                    color: "rgb(0 166 160)",
-                    fontSize: "20px",
-                  }}
-                >
-                  {data.TTitleCharges}
-                </TableCell>
+                <TableRow>
+                  <TableCell
+                    variant="footer"
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "25px",
+                      color: "rgb(0 166 160)",
+                      borderBottom: "none",
+                    }}
+                  >
+                    Total Title Charges
+                  </TableCell>
+                  <TableCell
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "25px",
+                      color: "rgb(0 166 160)",
+                      borderBottom: "none",
+                    }}
+                  >
+                    {data.BTitleCharges}
+                  </TableCell>
+                  <TableCell
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "25px",
+                      color: "rgb(0 166 160)",
+                      borderBottom: "none",
+                    }}
+                  >
+                    {data.STitleCharges}
+                  </TableCell>
+                  <TableCell
+                    style={{
+                      borderBottom: "none",
+                      fontWeight: "bold",
+                      color: "rgb(0 166 160)",
+                      fontSize: "20px",
+                    }}
+                  >
+                    {data.TTitleCharges}
+                  </TableCell>
+                </TableRow>
               </TableBody>
+              </>
             </Table>
           </Box>
         </Paper>
@@ -590,114 +630,139 @@ const QuoteGet = (props) => {
                   </TableCell>
                 </TableRow>
               </TableHead>
+<>
+              <TableBody>
+               
+                  
+                  <TableRow>
+                  <h4 >
+                    Deed State
+                    Tax&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  </h4>
 
-              <TableBody>
-                <h4>
-                  Deed State
-                  Tax&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </h4>
-
-                <TableCell>{data.BDST}</TableCell>
-                <TableCell>{data.SDST}</TableCell>
-                <TableCell
-                  style={{ fontWeight: "bold", color: "rgb(0 166 160)" }}
-                >
-                  {data.TDST}
-                </TableCell>
+                  <TableCell>{data.BDST}</TableCell>
+                  <TableCell>{data.SDST}</TableCell>
+                  <TableCell
+                    style={{ fontWeight: "bold", color: "rgb(0 166 160)" }}
+                  >
+                    {data.TDST}
+                  </TableCell>
+                </TableRow>
               </TableBody>
               <TableBody>
-                <h4>Mortgage State Tax</h4>
-                <TableCell>{data.BMST}</TableCell>
-                <TableCell>{data.SMST}</TableCell>
-                <TableCell
-                  style={{ fontWeight: "bold", color: "rgb(0 166 160)" }}
-                >
-                  {data.TMST}
-                </TableCell>
+                
+                  
+                  <TableRow>
+                  <h4 >Mortgage State Tax</h4>
+                  <TableCell>{data.BMST}</TableCell>
+                  <TableCell>{data.SMST}</TableCell>
+                  <TableCell
+                    style={{ fontWeight: "bold", color: "rgb(0 166 160)" }}
+                  >
+                    {data.TMST}
+                  </TableCell>
+                </TableRow>
               </TableBody>
               <TableBody>
-                <h4>Mortgage Intangible Tax</h4>
-                <TableCell>{data.BMIT}</TableCell>
-                <TableCell>{data.SMIT}</TableCell>
-                <TableCell
-                  style={{ fontWeight: "bold", color: "rgb(0 166 160)" }}
-                >
-                  {data.TMIT}
-                </TableCell>
+                
+                 
+                  <TableRow>
+                  <h4 >Mortgage Intangible Tax</h4>
+                  <TableCell>{data.BMIT}</TableCell>
+                  <TableCell>{data.SMIT}</TableCell>
+                  <TableCell
+                    style={{ fontWeight: "bold", color: "rgb(0 166 160)" }}
+                  >
+                    {data.TMIT}
+                  </TableCell>
+                </TableRow>
               </TableBody>
               <TableBody>
-                <h4>Mortgage Recording Fee</h4>
-                <TableCell>{data.BMRF}</TableCell>
-                <TableCell>{data.SMRF}</TableCell>
-                <TableCell
-                  style={{ fontWeight: "bold", color: "rgb(0 166 160)" }}
-                >
-                  {data.TMRF}
-                </TableCell>
+                <TableRow>
+                  <h4 >Mortgage Recording Fee</h4>
+                  <TableCell>{data.BMRF}</TableCell>
+                  <TableCell>{data.SMRF}</TableCell>
+                  <TableCell
+                    style={{ fontWeight: "bold", color: "rgb(0 166 160)" }}
+                  >
+                    {data.TMRF}
+                  </TableCell>
+                </TableRow>
               </TableBody>
               <TableBody>
-                <h4>Deed Recording Fee</h4>
-                <TableCell>{data.BDRF}</TableCell>
-                <TableCell>{data.SDRF}</TableCell>
-                <TableCell
-                  style={{ fontWeight: "bold", color: "rgb(0 166 160)" }}
-                >
-                  {data.TDRF}
-                </TableCell>
+               
+                 
+                  <TableRow>
+                  <h4 >Deed Recording Fee</h4>
+                  <TableCell>{data.BDRF}</TableCell>
+                  <TableCell>{data.SDRF}</TableCell>
+                  <TableCell
+                    style={{ fontWeight: "bold", color: "rgb(0 166 160)" }}
+                  >
+                    {data.TDRF}
+                  </TableCell>
+                </TableRow>
               </TableBody>
               <TableBody>
-                <h4>Total Taxes & Other Government Fees</h4>
-                <TableCell>{data.BTTOGF}</TableCell>
-                <TableCell>{data.STTOGF}</TableCell>
-                <TableCell
-                  style={{ fontWeight: "bold", color: "rgb(0 166 160)" }}
-                >
-                  {data.TTTOGF}
-                </TableCell>
+               
+                  
+                  <TableRow>
+                  <h4 >Total Taxes & Other Government Fees</h4>
+                  <TableCell>{data.BTTOGF}</TableCell>
+                  <TableCell>{data.STTOGF}</TableCell>
+                  <TableCell
+                    style={{ fontWeight: "bold", color: "rgb(0 166 160)" }}
+                  >
+                    {data.TTTOGF}
+                  </TableCell>
+                </TableRow>
               </TableBody>
               <TableBody>
-                <TableCell
-                  variant="footer"
-                  style={{
-                    fontWeight: "bold",
-                    fontSize: "25px",
-                    color: "rgb(0 166 160)",
-                    borderBottom: "none",
-                  }}
-                >
-                  Total Taxes & Other Government Fees
-                </TableCell>
-                <TableCell
-                  style={{
-                    fontWeight: "bold",
-                    fontSize: "25px",
-                    color: "rgb(0 166 160)",
-                    borderBottom: "none",
-                  }}
-                >
-                  {data.BTTOGF}
-                </TableCell>
-                <TableCell
-                  style={{
-                    fontWeight: "bold",
-                    fontSize: "25px",
-                    color: "rgb(0 166 160)",
-                    borderBottom: "none",
-                  }}
-                >
-                  {data.STTOGF}
-                </TableCell>
-                <TableCell
-                  style={{
-                    borderBottom: "none",
-                    fontWeight: "bold",
-                    color: "rgb(0 166 160)",
-                    fontSize: "20px",
-                  }}
-                >
-                  {data.TTTOGF}
-                </TableCell>
+                <TableRow>
+                  <TableCell
+                    variant="footer"
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "25px",
+                      color: "rgb(0 166 160)",
+                      borderBottom: "none",
+                    }}
+                  >
+                    Total Taxes & Other Government Fees
+                  </TableCell>
+                  <TableCell
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "25px",
+                      color: "rgb(0 166 160)",
+                      borderBottom: "none",
+                    }}
+                  >
+                    {data.BTTOGF}
+                  </TableCell>
+                  <TableCell
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "25px",
+                      color: "rgb(0 166 160)",
+                      borderBottom: "none",
+                    }}
+                  >
+                    {data.STTOGF}
+                  </TableCell>
+                  <TableCell
+                    style={{
+                      borderBottom: "none",
+                      fontWeight: "bold",
+                      color: "rgb(0 166 160)",
+                      fontSize: "20px",
+                    }}
+                  >
+                    {data.TTTOGF}
+                  </TableCell>
+                </TableRow>
               </TableBody>
+              </>
             </Table>
           </Box>
         </Paper>
