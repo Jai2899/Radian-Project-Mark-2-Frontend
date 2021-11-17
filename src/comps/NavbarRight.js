@@ -17,7 +17,7 @@ const NavbarRight = () => {
             <>
               {context.token && (<Link to="/MyQuotations">My Quotations</Link>)}
               {context.token && (
-                <button className="myButton" onClick={context.logout}><Link to="/">Logout</Link></button>
+                <button className="myButton" onClick={context.logout}><Link to="/Login">Logout</Link></button>
               )}
             </>
           </div>
